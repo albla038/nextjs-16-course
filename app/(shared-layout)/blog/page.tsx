@@ -35,9 +35,13 @@ async function LoadBlogList() {
         <Card key={post._id} className="pt-0 overflow-clip">
           <div className="relative h-48 w-full overflow-hidden">
             <Image
-              src="https://images.unsplash.com/photo-1761839258753-85d8eecbbc29?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={
+                post.imageUrl ??
+                "https://images.unsplash.com/photo-1761839258753-85d8eecbbc29?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              }
               alt="image"
               fill
+              className="object-cover"
             />
           </div>
           <CardContent>
@@ -69,11 +73,11 @@ function SkeletonLoadingUi() {
     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {[...Array(3)].map((_, i) => (
         <div key={i} className="flex flex-col gap-y-3">
-          <Skeleton className="h-48 w-full rounded-xl"/>
+          <Skeleton className="h-48 w-full rounded-xl" />
           <div className="flex flex-col gap-y-2">
-            <Skeleton className="h-6 w-3/4"/>
-            <Skeleton className="h-4 w-full"/>
-            <Skeleton className="h-4 w-2/3"/>
+            <Skeleton className="h-6 w-3/4" />
+            <Skeleton className="h-4 w-full" />
+            <Skeleton className="h-4 w-2/3" />
           </div>
         </div>
       ))}

@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         hostname: "images.unsplash.com",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "compassionate-meadowlark-610.convex.cloud",
+        port: "",
+      },
     ],
   },
 };
