@@ -54,5 +54,5 @@ export async function createBlogAction(values: z.infer<typeof postSchema>) {
     };
   }
 
-  redirect("/");
+  redirect("/blog");
 }
