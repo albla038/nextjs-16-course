@@ -1,6 +1,7 @@
 "use client";
 
 import { Button, buttonVariants } from "@/components/ui/button";
+import { SearchInput } from "@/components/web/SearchInput";
 import { ThemeToggle } from "@/components/web/theme-toggle";
 import { authClient } from "@/lib/auth-client";
 import { useConvexAuth } from "convex/react";
@@ -35,6 +36,10 @@ export function Navbar() {
       </div>
 
       <div className="flex items-center gap-2">
+        <div className="hidden md:block mr-2">
+          <SearchInput />
+        </div>
+
         {isLoading ? null : isAuthenticated ? (
           <Button
             onClick={() =>
